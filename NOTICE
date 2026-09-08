@@ -1,0 +1,127 @@
+TargetCoreMFC
+Copyright 2002-2026 Ivyware Pty Ltd, Khrustal & Mann
+             MELBOURNE, VICTORIA, AUSTRALIA, 3000
+
+This product includes software developed by Ivyware Pty Ltd and by
+Khrustal & Mann.
+
+Licensed under the Apache License, Version 2.0. See the LICENSE file in
+this directory, or http://www.apache.org/licenses/LICENSE-2.0
+
+This library was called P2PmsgMFC until 2026, and produced P2PmsgMFC.dll.
+It was renamed to match the component it is the MFC layer of. Nothing about
+the licence, the copyright holders or the history changed with the name.
+
+
+-------------------------------------------------------------------------
+Files NOT covered by the Apache License, Version 2.0
+-------------------------------------------------------------------------
+
+The following files are Microsoft Corporation project-template, wizard-
+generated, or sample-derived files. They remain subject to Microsoft's own
+terms and carry their own notices, which must not be removed:
+
+    Targetver.h                        Visual Studio project template.
+    Resource.h                         Visual C++ generated include file.
+    TargetCoreMFC.rc                   Visual C++ generated resource script.
+                                       See the note below - part of this file
+                                       is not Microsoft's.
+    res/TargetCoreMFC.rc2              Visual C++ generated resource script,
+                                       for resources the editor does not
+                                       maintain.
+    stdafx.h                           Visual Studio project template.
+    stdafx.cpp                         Visual Studio project template.
+    TargetCoreMFC(2022).sln            Visual Studio solution file.
+    TargetCoreMFC(2022).vcxproj        Visual Studio project files.
+    TargetCoreMFC(2022).vcxproj.filters
+
+TargetCoreMFC.rc is a mixed file. Its wizard-generated skeleton is Microsoft's,
+as above; the VERSIONINFO block, and the values it reads from
+TargetCoreMFC_version.h, are the work of Khrustal & Mann and ARE covered by the
+Apache License, Version 2.0. TargetCoreMFC_version.h itself carries the Apache
+header in full.
+
+dllmain.cpp began as the AppWizard DLL entry point, but the DLL_PROCESS_ATTACH
+handling, the MFC extension-DLL initialisation and the P2PresourceState
+mechanism it hosts are the work of Ivyware Pty Ltd and of Khrustal & Mann. It
+carries the Apache header in full and is covered by the Apache License,
+Version 2.0.
+
+
+-------------------------------------------------------------------------
+Two files whose provenance is UNCONFIRMED
+-------------------------------------------------------------------------
+
+    InPlaceEdit.h
+    InPlaceEdit.cpp
+
+These deliberately carry NO licence header. They are the only tracked sources
+in this repository with no copyright notice of any kind, and they declare a
+class, CInPlaceEdit, whose name and shape match a widely circulated public
+sample for in-place editing of a CListCtrl subitem. The file is built from
+ClassWizard scaffolding (the //{{AFX_VIRTUAL and //{{AFX_MSG markers), which
+places at least the skeleton with Microsoft, and nothing in the file records
+who wrote the rest.
+
+Asserting copyright over code whose origin cannot be established is worse than
+leaving a documented gap, so the licensing sweep skipped them. Before this
+repository is published, either establish that the code is ours and apply the
+standard header, or replace it - CInPlaceEdit is small and its behaviour is
+fully described by CListViewEx, which is the only consumer.
+
+
+-------------------------------------------------------------------------
+Files that earlier revisions tracked and no longer do
+-------------------------------------------------------------------------
+
+None of these needs an exception, because none is distributed any more:
+
+  - TargetCoreMFC.aps and TargetCoreMFC(2022).vcxproj.user were tracked only
+    because they predated the .gitignore rules that name them. The first is the
+    resource editor's binary cache, regenerated from the .rc; the second is
+    per-user IDE settings. Neither is source.
+  - (Blocked)P2Peermfc.h, P2PmsgMFC.cpp and P2PmsgMFC.def were AppWizard output
+    for a DLL this repository does not build. <ModuleDefinitionFile> is empty in
+    all four configurations, so the .def was never read.
+  - The earlier-revision sources carrying a bracketed suffix - (SMA), (NLR),
+    [NLR], [Discontinued], _NLR - were alternative or superseded copies,
+    including the four Ole*Ex[Discontinued] drag-and-drop files that
+    COleDropTarget_Ext replaced. None was in the build, none was included by
+    anything that was, and nothing outside this repository referenced them.
+  - res/P2Properties_Wnd.ico and res/P2Properties_Wnd_hc.ico were unreferenced:
+    the resource script loads the .bmp files of those names, never the icons.
+
+
+-------------------------------------------------------------------------
+Third-party components required at build or run time
+-------------------------------------------------------------------------
+
+This software is built against, and links to, components that are licensed
+separately and are NOT distributed under the Apache License, Version 2.0:
+
+    Microsoft Foundation Classes (MFC)  - Microsoft, licensed separately.
+                                          Built as an MFC extension DLL
+                                          against the shared MFC runtime.
+    Microsoft Visual C++ runtime        - Microsoft, licensed separately.
+                                          (mfc140u, msvcp140, vcruntime140,
+                                          ucrtbase)
+    Windows SDK                         - Microsoft, part of the operating
+                                          system.
+
+These are dependencies, not bundled code. No source from any of them is
+included in this repository.
+
+
+-------------------------------------------------------------------------
+Sibling components required at build and run time
+-------------------------------------------------------------------------
+
+    Msgcore                             - Ivyware Pty Ltd, Khrustal & Mann.
+    TargetCore                          - Ivyware Pty Ltd, Khrustal & Mann.
+    MsgcoreMFC                          - Ivyware Pty Ltd, Khrustal & Mann.
+                                          All under the Apache License,
+                                          Version 2.0.
+
+All three are separate repositories within the MSCS family, under the same
+licence and the same copyright holders. They are dependencies of this library,
+not bundled code: no source from any of them is included here.
