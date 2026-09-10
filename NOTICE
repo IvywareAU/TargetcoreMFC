@@ -31,9 +31,9 @@ terms and carry their own notices, which must not be removed:
                                        maintain.
     stdafx.h                           Visual Studio project template.
     stdafx.cpp                         Visual Studio project template.
-    TargetCoreMFC(2022).sln            Visual Studio solution file.
-    TargetCoreMFC(2022).vcxproj        Visual Studio project files.
-    TargetCoreMFC(2022).vcxproj.filters
+    TargetCoreMFC(2026).sln            Visual Studio solution file.
+    TargetCoreMFC(2026).vcxproj        Visual Studio project files.
+    TargetCoreMFC(2026).vcxproj.filters
 
 TargetCoreMFC.rc is a mixed file. Its wizard-generated skeleton is Microsoft's,
 as above; the VERSIONINFO block, and the values it reads from
@@ -76,7 +76,7 @@ Files that earlier revisions tracked and no longer do
 
 None of these needs an exception, because none is distributed any more:
 
-  - TargetCoreMFC.aps and TargetCoreMFC(2022).vcxproj.user were tracked only
+  - TargetCoreMFC.aps and TargetCoreMFC(2026).vcxproj.user were tracked only
     because they predated the .gitignore rules that name them. The first is the
     resource editor's binary cache, regenerated from the .rc; the second is
     per-user IDE settings. Neither is source.

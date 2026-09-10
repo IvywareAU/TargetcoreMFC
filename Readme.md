@@ -92,7 +92,7 @@ tests.
 
 ## Requirements
 
-* Visual Studio 2022, platform toolset **v143**, Windows SDK 10.
+* Visual Studio 2026, platform toolset **v145**, Windows SDK 10.
 * MFC, used as a **shared** (dynamic) library — this project is an MFC extension DLL, built with
   `_AFXEXT`, `/std:c++20` and Unicode throughout, in all four configurations.
 * **Msgcore**, **TargetCore** and **MsgcoreMFC**, checked out as sibling directories. They are
@@ -117,10 +117,10 @@ MSCS tree.
 ## Building
 
 ```
-msbuild "TargetCoreMFC(2022).sln" -p:Configuration=Debug   -p:Platform=x64
-msbuild "TargetCoreMFC(2022).sln" -p:Configuration=Release -p:Platform=x64
-msbuild "TargetCoreMFC(2022).sln" -p:Configuration=Debug   -p:Platform=x86
-msbuild "TargetCoreMFC(2022).sln" -p:Configuration=Release -p:Platform=x86
+msbuild "TargetCoreMFC(2026).sln" -p:Configuration=Debug   -p:Platform=x64
+msbuild "TargetCoreMFC(2026).sln" -p:Configuration=Release -p:Platform=x64
+msbuild "TargetCoreMFC(2026).sln" -p:Configuration=Debug   -p:Platform=x86
+msbuild "TargetCoreMFC(2026).sln" -p:Configuration=Release -p:Platform=x86
 ```
 
 The solution names the 32-bit platform **`x86`**, while the project underneath names it `Win32`.
