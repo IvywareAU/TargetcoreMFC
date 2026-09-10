@@ -90,7 +90,7 @@ a working exploit for any of them is still worth reporting — it changes the pr
 
 | Version | Supported |
 |---|---|
-| 3.1.x | Yes |
+| 3.0.x | Yes |
 | earlier, and everything released as P2PmsgMFC | No |
 
 Version identity comes from `TargetCoreMFC_version.h`; the DLL reports it in its `VERSIONINFO`

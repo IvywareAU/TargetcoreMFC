@@ -6,7 +6,7 @@ TargetCore store.**
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Language](https://img.shields.io/badge/C%2B%2B-20-00599C.svg)](#requirements)
 [![Windows](https://img.shields.io/badge/Windows-MFC%20extension%20DLL-0078D6.svg)](#requirements)
-[![Version](https://img.shields.io/badge/version-3.1.0.0-6f42c1.svg)](#versioning)
+[![Version](https://img.shields.io/badge/version-3.0.0.0-6f42c1.svg)](#versioning)
 [![Since](https://img.shields.io/badge/since-2002-6f42c1.svg)](#targetcoremfc)
 
 [MsgcoreMFC](../MsgcoreMFC) can put a control's *state* into a store and take it out again. This
@@ -36,7 +36,7 @@ m_wndProperties.AddItem ( pGroup, mgr.r_Desc()[L"window"][L"title"],
 ## Status
 
 All four configurations build clean — zero errors and **zero warnings** from this project at `/W4`,
-under one C++ standard. The unit suite runs green: 10 cases, 22 checks. Version identity is 3.1.0.0
+under one C++ standard. The unit suite runs green: 10 cases, 22 checks. Version identity is 3.0.0.0
 and comes from a single header.
 
 The 32-bit configurations build for the first time in a long while. They had been failing with
@@ -151,13 +151,13 @@ itself out.
 
 ## Versioning
 
-`TargetCoreMFC_version.h` is the single source of version identity, at **3.1.0.0**, matching
+`TargetCoreMFC_version.h` is the single source of version identity, at **3.0.0.0**, matching
 TargetCore. The resource script reads `FILEVERSION`, `PRODUCTVERSION` and both version strings from
 it, and `TargetCoreMFC.h` exposes the macros to consumers:
 
 ```cpp
-#if !TARGETCOREMFC_VERSION_AT_LEAST(3,1,0)
-#  error TargetCoreMFC 3.1.0 or later is required
+#if !TARGETCOREMFC_VERSION_AT_LEAST(3,0,0)
+#  error TargetCoreMFC 3.0.0 or later is required
 #endif
 ```
 
