@@ -168,8 +168,8 @@ pField->Print(stdout,2);
     if ( oATTR.Exists(T_4GRID_TYPE_Typ)                                               &&
          oATTR.SelectItem(T_4GRID_TYPE_Typ).r_data().c_wcscmp(T_4GRID_TYPE_SPIN) == 0    )
     {
-      int nMin = pField->r_Attr().SelectItem(_N("Spin")).r_Attr().SelectItem(_N("Min")).c_int();
-      int nMax = pField->r_Attr().SelectItem(_N("Spin")).r_Attr().SelectItem(_N("Max")).c_int();
+      int nMin = pField->r_Attr().SelectItem(L"Spin").r_Attr().SelectItem(L"Min").c_int();
+      int nMax = pField->r_Attr().SelectItem(L"Spin").r_Attr().SelectItem(L"Max").c_int();
       pProp -> EnableSpinControl ( TRUE, nMin, nMax );
       pProp  -> SetData ( pField->GetP2Pos() );
     }

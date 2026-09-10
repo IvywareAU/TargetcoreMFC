@@ -832,8 +832,8 @@ ASSERT(0);
           continue;
         LPCTNAM lpszPropname = oCursAttr.r_item().c_name();
         LPCTSTR lpszDesc     = 0;
-        if ( oCursAttr.r_item().r_Attr().Exists(_N("Dsc")) )
-          lpszDesc = oCursAttr.r_item().r_Attr().SelectItem(_N("Dsc")).c_wstr();
+        if ( oCursAttr.r_item().r_Attr().Exists(L"Dsc") )
+          lpszDesc = oCursAttr.r_item().r_Attr().SelectItem(L"Dsc").c_wstr();
        _variant_t var = P2PmsgData_var ( oCursAttr.r_item().r_data() );
         pProp = new CMFCPropertyGridProperty ( lpszPropname, var, lpszDesc );
         pProp  -> SetData ( oCursAttr.r_item().GetP2Pos() );
@@ -862,11 +862,11 @@ ASSERT(0);
       else if ( oCursNode.IsItem() )
       {
         LPCTSTR lpszPropname = oCursNode.r_item().c_name();
-        if ( oCursNode.r_item().r_Attr().Exists(_N("#Lab")) )
-          lpszPropname = oCursNode.r_item().r_Attr().SelectItem(_N("#Lab")).c_wstr();
+        if ( oCursNode.r_item().r_Attr().Exists(L"#Lab") )
+          lpszPropname = oCursNode.r_item().r_Attr().SelectItem(L"#Lab").c_wstr();
         LPCTSTR lpszDesc     = 0;
-        if ( oCursNode.r_item().r_Attr().Exists(_N("#Dsc")) )
-          lpszDesc = oCursNode.r_item().r_Attr().SelectItem(_N("#Dsc")).c_wstr();
+        if ( oCursNode.r_item().r_Attr().Exists(L"#Dsc") )
+          lpszDesc = oCursNode.r_item().r_Attr().SelectItem(L"#Dsc").c_wstr();
        _variant_t var = P2PmsgData_var ( oCursNode.r_item().r_data() );
         pProp = new CMFCPropertyGridProperty ( lpszPropname, var, lpszDesc );
         pProp  -> SetData ( oCursNode.r_item().GetP2Pos() );

@@ -212,7 +212,7 @@ CP2PexploreCtrl::OnP2PeventNOTN ( WPARAM wParam, LPARAM )
     }
 
     // Message
-    if ( pP2Pevent->Exists(_N("Desc")) )
+    if ( pP2Pevent->Exists(L"Desc") )
     {
       CString strMessage("Message: ");
       strMessage += (*pP2Pevent)[LDesc].c_wstr();
