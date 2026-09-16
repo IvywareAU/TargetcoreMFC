@@ -123,7 +123,7 @@ CP2PmsgTreeCtrl_SerialiseSession ( CP2PmsgTreeCtrl& oP2PmsgTreeCtrl, HTREEITEM h
       hItemChild = oP2PmsgTreeCtrl.GetNextSiblingItem ( hItemChild );
     }
 }
-TargetCoreMFC_EXT void
+TargetcoreMFC_EXT void
 CP2PmsgTreeCtrl_RestoreSession ( CP2PmsgTreeCtrl& oP2PmsgTreeCtrl, HTREEITEM hItem )
 {
     // Observe serialised session expansion
@@ -1174,7 +1174,7 @@ CP2PmsgTreeCtrl_PrintItemAttr ( CP2PmsgTreeCtrl *pP2PmsgTreeCtrl, FILE *fd, HTRE
 //  Returns:     BOOL
 //                 TRUE... Active sorting
 //                 FALSE.. Nothing sorted
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CP2PmsgTreeCtrl_Sort4Folder ( CP2PmsgTreeCtrl& wndP2PmsgTreeCtrl, HTREEITEM hItem
                             , UINT uiParamsort, CList<CString>& oCListGroups
                             , UINT uiHintsmask )

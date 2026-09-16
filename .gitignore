@@ -2,7 +2,7 @@
 #
 # One output root now, out/<Platform>/<Configuration>/, pinned in the .vcxproj.
 # The bare Debug/, Release/, x64/ and Win32/ trees below are the OLD locations,
-# and /TargetCoreMFC/ is the stray intermediate tree the older project format
+# and /TargetcoreMFC/ is the stray intermediate tree the older project format
 # wrote beside the sources (it was /P2PmsgMFC/ before the rename). All are kept
 # ignored so a tree built before the move does not show leftovers as untracked.
 out/
@@ -10,7 +10,7 @@ Debug/
 Release/
 x64/
 Win32/
-/TargetCoreMFC/
+/TargetcoreMFC/
 /P2PmsgMFC/
 
 # IDE / tooling caches

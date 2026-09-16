@@ -14,7 +14,7 @@ REM WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
 REM implied. See the License for the specific language governing
 REM permissions and limitations under the License.
 REM
-REM  Build and run the TargetCoreMFC unit suites (x64, Debug).
+REM  Build and run the TargetcoreMFC unit suites (x64, Debug).
 REM
 REM      build_run_suite.bat
 REM
@@ -23,12 +23,12 @@ REM  near-copy of it rather than a shared helper: the toolchain probe and the
 REM  import-library search are the parts that actually break, and having them in
 REM  one place in the other repository did not stop that. What differs is the
 REM  source list, the output name, and that TWO import libraries are needed here
-REM  (TargetCoreMFC and the Msgcore it links against) rather than one.
+REM  (TargetcoreMFC and the Msgcore it links against) rather than one.
 REM
 REM  NOTES: Everything this script produces goes to tests\out\, which
 REM         .gitignore's depth-independent "out/" already covers.
 REM       : The runner links the DLL build of both libraries and copies both
-REM         DLLs beside the exe. There is no static mode: TargetCoreMFC has no
+REM         DLLs beside the exe. There is no static mode: TargetcoreMFC has no
 REM         static configuration to link.
 REM       : /std:c++20 matches the library's own setting. Building the suite at
 REM         a different standard than the DLL it exercises is exactly the split
@@ -54,8 +54,8 @@ REM ---- Locate the import libraries ------------------------------------------
 REM  Both are written to the same per-platform, per-configuration directory by
 REM  Directory.Build.props, so one search finds both.
 set "LIBDIR="
-if defined WDMSCS_LIB if exist "%WDMSCS_LIB%\x64\Debug\TargetCoreMFC.lib" set "LIBDIR=%WDMSCS_LIB%\x64\Debug"
-if not defined LIBDIR if exist "%MSCS%\lib\x64\Debug\TargetCoreMFC.lib" set "LIBDIR=%MSCS%\lib\x64\Debug"
+if defined WDMSCS_LIB if exist "%WDMSCS_LIB%\x64\Debug\TargetcoreMFC.lib" set "LIBDIR=%WDMSCS_LIB%\x64\Debug"
+if not defined LIBDIR if exist "%MSCS%\lib\x64\Debug\TargetcoreMFC.lib" set "LIBDIR=%MSCS%\lib\x64\Debug"
 if not defined LIBDIR goto :nothing_built
 if not exist "%LIBDIR%\Msgcore.lib" goto :no_msgcore
 
@@ -65,17 +65,17 @@ if not exist "%OUTDIR%" mkdir "%OUTDIR%"
 echo === BUILD ===
 cl /nologo /EHsc /MDd /std:c++20 /Zc:wchar_t ^
    /D_DEBUG /D_CONSOLE /D_UNICODE /DUNICODE /D_AFXDLL /D_WIN32_WINNT=0x0603 ^
-   /I"%REPO%" /I"%MSCS%\Msgcore" /I"%MSCS%\TargetCore" /I"%MSCS%\MsgcoreMFC" /Fo"%OUTDIR%\\" /Fd"%OUTDIR%\suite.pdb" ^
+   /I"%REPO%" /I"%MSCS%\Msgcore" /I"%MSCS%\Targetcore" /I"%MSCS%\MsgcoreMFC" /Fo"%OUTDIR%\\" /Fd"%OUTDIR%\suite.pdb" ^
    "%HERE%SuiteMain.cpp" "%HERE%TestFramework.cpp" ^
-   "%HERE%TargetCoreMFCSuite.cpp" ^
-   /link /LIBPATH:"%LIBDIR%" TargetCoreMFC.lib MsgcoreMFC.lib TargetCore.lib Msgcore.lib comsuppwd.lib Shlwapi.lib ^
+   "%HERE%TargetcoreMFCSuite.cpp" ^
+   /link /LIBPATH:"%LIBDIR%" TargetcoreMFC.lib MsgcoreMFC.lib Targetcore.lib Msgcore.lib comsuppwd.lib Shlwapi.lib ^
    /OUT:"%OUTDIR%\targetcoremfc_suite.exe"
 if errorlevel 1 goto :fail_build
 
 REM ---- Stage the DLLs beside the exe -----------------------------------------
-set "MFCDLL=%REPO%\out\x64\Debug\TargetCoreMFC.dll"
+set "MFCDLL=%REPO%\out\x64\Debug\TargetcoreMFC.dll"
 set "COREDLL=%MSCS%\Msgcore\out\x64\Debug\Msgcore.dll"
-set "TCDLL=%MSCS%\TargetCore\out\x64\Debug\TargetCore.dll"
+set "TCDLL=%MSCS%\Targetcore\out\x64\Debug\Targetcore.dll"
 set "MMFCDLL=%MSCS%\MsgcoreMFC\out\x64\Debug\MsgcoreMFC.dll"
 if not exist "%MFCDLL%"  goto :no_dll
 if not exist "%COREDLL%" goto :no_dll
@@ -105,19 +105,19 @@ endlocal & exit /b 1
 
 :nothing_built
 echo.
-echo ERROR: TargetCoreMFC has not been built for x64 Debug.
+echo ERROR: TargetcoreMFC has not been built for x64 Debug.
 echo        Looked for an import library at
-if defined WDMSCS_LIB echo            %WDMSCS_LIB%\x64\Debug\TargetCoreMFC.lib
-echo            %MSCS%\lib\x64\Debug\TargetCoreMFC.lib
+if defined WDMSCS_LIB echo            %WDMSCS_LIB%\x64\Debug\TargetcoreMFC.lib
+echo            %MSCS%\lib\x64\Debug\TargetcoreMFC.lib
 echo        and found neither. Build Debug^|x64 first:
-echo            msbuild "TargetCoreMFC(2026).sln" /p:Configuration=Debug /p:Platform=x64
+echo            msbuild "TargetcoreMFC(2026).sln" /p:Configuration=Debug /p:Platform=x64
 endlocal & exit /b 1
 
 :no_msgcore
 echo.
 echo ERROR: %LIBDIR%\Msgcore.lib is missing.
-echo        TargetCoreMFC.lib is there but the Msgcore it links against is not.
-echo        Building TargetCoreMFC produces both, so build Debug^|x64 again.
+echo        TargetcoreMFC.lib is there but the Msgcore it links against is not.
+echo        Building TargetcoreMFC produces both, so build Debug^|x64 again.
 endlocal & exit /b 1
 
 :no_dll

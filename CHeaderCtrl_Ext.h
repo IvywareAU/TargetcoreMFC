@@ -17,13 +17,13 @@
 //  NOTES: Primarily draws multi-line headers
 //
 #pragma once
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 
 
 /////////////////////////////////////////////////
 // CHeaderCtrlEx window
 
-class TargetCoreMFC_EXT CHeaderCtrlEx : public CHeaderCtrl
+class TargetcoreMFC_EXT CHeaderCtrlEx : public CHeaderCtrl
 {
     // Constructors and destructor
     public:

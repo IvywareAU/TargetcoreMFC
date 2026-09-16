@@ -1,14 +1,14 @@
-# Contributing to TargetCoreMFC
+# Contributing to TargetcoreMFC
 
 ## Before you spend time on a change
 
-TargetCoreMFC is the visual layer of the MSCS family. Three constraints shape almost every
+TargetcoreMFC is the visual layer of the MSCS family. Three constraints shape almost every
 change here:
 
-- **It is an MFC extension DLL.** Everything crossing the boundary is `TargetCoreMFC_EXT`,
+- **It is an MFC extension DLL.** Everything crossing the boundary is `TargetcoreMFC_EXT`,
   built with `_AFXEXT` against the shared MFC runtime. Changing an exported signature breaks
   every consumer at link time, not compile time.
-- **It sits on top of three siblings** — [Msgcore](../Msgcore), [TargetCore](../TargetCore)
+- **It sits on top of three siblings** — [Msgcore](../Msgcore), [Targetcore](../Targetcore)
   and [MsgcoreMFC](../MsgcoreMFC). Its controls take `P3PmsgItem` and `P3PmsgAttr` by
   reference, so a change to how those are used here is a change against contracts other
   repositories own.
@@ -96,7 +96,7 @@ consistent. In particular:
   that every access through them is undefined behaviour for a type wanting alignment. Use
   `Load()` and `Store()`.
 
-- **A version number written anywhere but `TargetCoreMFC_version.h`.** The resource script
+- **A version number written anywhere but `TargetcoreMFC_version.h`.** The resource script
   reads its `FILEVERSION`, `PRODUCTVERSION` and both version strings from that header. It
   exists because three numbers had drifted apart and shipped that way.
 

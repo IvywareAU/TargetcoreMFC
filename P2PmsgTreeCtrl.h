@@ -22,14 +22,14 @@
 #include "P2Peer.h"
 #include "P2PeerTarget.h"
 #include "P2PmsgMgr.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "CString_Ext.h"
 
 //  Pre-definitions
 typedef CMap<P2Pos, P2Pos, HTREEITEM, HTREEITEM> CMap_HTREE_P2Pos;
 //typedef CList<CString> CMap_CString;
 
-class TargetCoreMFC_EXT CP2PmsgTreeCtrl : public CTreeCtrl, public P2PeerTarget
+class TargetcoreMFC_EXT CP2PmsgTreeCtrl : public CTreeCtrl, public P2PeerTarget
 {
 	  DECLARE_DYNAMIC(CP2PmsgTreeCtrl)
 
@@ -152,28 +152,28 @@ class TargetCoreMFC_EXT CP2PmsgTreeCtrl : public CTreeCtrl, public P2PeerTarget
 
 //
 //  
-TargetCoreMFC_EXT bool
+TargetcoreMFC_EXT bool
 CTreeCtrl_EverExpanded ( CTreeCtrl *pCTreeCtrl, HTREEITEM hItem );
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CTreeCtrl_IsExpanded ( CTreeCtrl& oCTreeCtrl, HTREEITEM hItem );
-TargetCoreMFC_EXT void
+TargetcoreMFC_EXT void
 CTreeCtrl_ClearUserData( CTreeCtrl *pCTreeCtrl, HTREEITEM hItem );
-TargetCoreMFC_EXT void
+TargetcoreMFC_EXT void
 CTreeCtrl_DeleteAllChildren ( CTreeCtrl *pCTreeCtrl, HTREEITEM hItem );
 
 ///////////////////////////////////////////////////////////////////////
 //  P2PmsgTreeCtrl extensions
 
-TargetCoreMFC_EXT CString
+TargetcoreMFC_EXT CString
 P2PmsgTreeCtrl_UniqueItemName ( P3PmsgItem& oItem
                               , LPCTSTR lpszItemName, UINT uiCopies = 100 );
-TargetCoreMFC_EXT void
+TargetcoreMFC_EXT void
 CP2PmsgTreeCtrl_PrintItem ( CP2PmsgTreeCtrl *pP2PmsgTreeCtrl, FILE *fd, HTREEITEM hItem );
-TargetCoreMFC_EXT void
+TargetcoreMFC_EXT void
 CP2PmsgTreeCtrl_PrintItemAttr ( CP2PmsgTreeCtrl *pP2PmsgTreeCtrl, FILE *fd, HTREEITEM hItem );
-TargetCoreMFC_EXT void
+TargetcoreMFC_EXT void
 CP2PmsgTreeCtrl_SerialiseSession ( CP2PmsgTreeCtrl& oP2PmsgTreeCtrl, HTREEITEM hItem );
-TargetCoreMFC_EXT void
+TargetcoreMFC_EXT void
 CP2PmsgTreeCtrl_RestoreSession ( CP2PmsgTreeCtrl& oP2PmsgTreeCtrl, HTREEITEM hItem );
 
 
@@ -182,7 +182,7 @@ constexpr UINT PSort_ALPHA         = (1<<0);
 constexpr UINT PSort_ACCESS        = (1<<2);
 constexpr UINT PSort_Group_FOLDERS = (1<<4);
 constexpr UINT PSort_Group_TYPE    = (1<<5);
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CP2PmsgTreeCtrl_Sort4Folder ( CP2PmsgTreeCtrl& wndP2PmsgTreeCtrl, HTREEITEM hItem
                             , UINT uiSParams, CList<CString>& oCListGroups
                             , UINT uiHintsmask = -1 );

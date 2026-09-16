@@ -18,11 +18,11 @@
 //  NOTES: Enumerates files in Folder
 //
 #pragma once
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 
 // CefCtrl
 
-class TargetCoreMFC_EXT CEnumFilesinFolder
+class TargetcoreMFC_EXT CEnumFilesinFolder
 {
     public:
 	      CEnumFilesinFolder ( LPCTSTR lpszFolderPath );

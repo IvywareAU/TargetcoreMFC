@@ -17,7 +17,7 @@
 //
 // Entry point for this repository's unit-test runner.
 //
-// Until this landed, TargetCoreMFC had no tests at all. What it has now is
+// Until this landed, TargetcoreMFC had no tests at all. What it has now is
 // deliberately modest, and the modesty is the point: this library is the
 // VISUAL layer of the family, and the great majority of it cannot be reached
 // without a desktop and a message pump. One suite covers what genuinely can.
@@ -41,16 +41,16 @@
 // ---------------------------------------------------------------------------
 int main(int /*argc*/, char* /*argv*/[])
 {
-    if (!tf_runner_startup("TargetCoreMFC unit tests"))
+    if (!tf_runner_startup("TargetcoreMFC unit tests"))
         return 1;
 
     int nSkipped = 0;
 
 #if !defined(TARGETCOREMFC_NO_SUITE)
-    printf("\n[TargetCoreMFC]\n");
-    RunTargetCoreMFCSuite();
+    printf("\n[TargetcoreMFC]\n");
+    RunTargetcoreMFCSuite();
 #else
-    printf("\n[TargetCoreMFC]\n  SKIPPED (TARGETCOREMFC_NO_SUITE)\n");
+    printf("\n[TargetcoreMFC]\n  SKIPPED (TARGETCOREMFC_NO_SUITE)\n");
     ++nSkipped;
 #endif
 

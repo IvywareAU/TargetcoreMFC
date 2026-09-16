@@ -18,7 +18,7 @@
 //
 
 #include "stdafx.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "P2PmsgNodeDlg.h"
 #include "afxdialogex.h"
 #include "CDialog_Ext.h"

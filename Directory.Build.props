@@ -1,17 +1,17 @@
 <Project>
   <!--
-    Repo-root MSBuild properties for the TargetCoreMFC repository.
+    Repo-root MSBuild properties for the TargetcoreMFC repository.
 
     This file exists so that a clone of THIS repository alone builds correctly. Before it,
     $(WDMSCS_LIB) was defaulted only by MSCS\Directory.Build.props in the surrounding tree,
     which is not part of this repository: a standalone clone got neither the default nor the
     guard in Directory.Build.targets, and link.exe wrote the import library and its .exp to
     the ROOT OF THE CURRENT DRIVE, silently, with the build still green. (Historic evidence
-    from exactly that failure: C:\TargetCore(2026)d.lib and three siblings, Apr/May 2026,
+    from exactly that failure: C:\Targetcore(2026)d.lib and three siblings, Apr/May 2026,
     under the pre-d50f150 artifact names.)
 
     MSBuild imports only the NEAREST Directory.Build.props walking up from the project, so
-    this file shadows the outer one for TargetCoreMFC(2026).vcxproj. That would silently move
+    this file shadows the outer one for TargetcoreMFC(2026).vcxproj. That would silently move
     the staging directory for anyone building inside the MSCS tree, where sibling projects
     link against MSCS\lib\... — so if an outer Directory.Build.props exists, chain to it and
     let it win. The standalone defaults below apply only when there is no outer file, i.e. in
@@ -19,7 +19,7 @@
 
     Modelled on Msgcore\Directory.Build.props, with ONE deliberate difference: the standalone
     default is the PARENT directory's lib\, not this repository's own. Msgcore links no
-    sibling and can stage into itself; this project links Msgcore.lib, TargetCore.lib and
+    sibling and can stage into itself; this project links Msgcore.lib, Targetcore.lib and
     MsgcoreMFC.lib, so all four must resolve to ONE directory. The published
     build-from-source route clones the four repositories side by side, which makes the shared
     parent the only place they can agree on without an environment variable. Setting
@@ -27,22 +27,22 @@
   -->
 
   <PropertyGroup>
-    <TargetCoreMFCOuterBuildProps>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))</TargetCoreMFCOuterBuildProps>
+    <TargetcoreMFCOuterBuildProps>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))</TargetcoreMFCOuterBuildProps>
   </PropertyGroup>
 
-  <Import Project="$(TargetCoreMFCOuterBuildProps)"
-          Condition="'$(TargetCoreMFCOuterBuildProps)' != '' and Exists('$(TargetCoreMFCOuterBuildProps)')" />
+  <Import Project="$(TargetcoreMFCOuterBuildProps)"
+          Condition="'$(TargetcoreMFCOuterBuildProps)' != '' and Exists('$(TargetcoreMFCOuterBuildProps)')" />
 
   <PropertyGroup>
-    <TargetCoreMFCStandalone Condition="'$(TargetCoreMFCOuterBuildProps)' == ''">true</TargetCoreMFCStandalone>
+    <TargetcoreMFCStandalone Condition="'$(TargetcoreMFCOuterBuildProps)' == ''">true</TargetcoreMFCStandalone>
   </PropertyGroup>
 
   <!-- Standalone clone: default WDMSCS_LIB to the lib\ beside this repository, so the
        variable is never empty and never relative, and so sibling clones of Msgcore,
-       TargetCore and MsgcoreMFC stage their import libraries where this project will look
+       Targetcore and MsgcoreMFC stage their import libraries where this project will look
        for them. An explicit WDMSCS_LIB (environment or command line) still wins, exactly as
        in the outer file. -->
-  <PropertyGroup Condition="'$(TargetCoreMFCStandalone)' == 'true' and '$(WDMSCS_LIB)' == ''">
+  <PropertyGroup Condition="'$(TargetcoreMFCStandalone)' == 'true' and '$(WDMSCS_LIB)' == ''">
     <WDMSCS_LIB>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\lib'))</WDMSCS_LIB>
   </PropertyGroup>
 
@@ -50,7 +50,7 @@
        version suffix and no debug 'd', so Debug and Release produce identically named
        .lib files; only the directory keeps them apart. Do not collapse this back to
        per-platform-only or Release will overwrite Debug. Mirrors the outer file. -->
-  <PropertyGroup Condition="'$(TargetCoreMFCStandalone)' == 'true' and '$(WDMSCS_LIB)' != '' and '$(Platform)' != '' and '$(Configuration)' != ''">
+  <PropertyGroup Condition="'$(TargetcoreMFCStandalone)' == 'true' and '$(WDMSCS_LIB)' != '' and '$(Platform)' != '' and '$(Configuration)' != ''">
     <WDMSCS_LIB_ROOT Condition="'$(WDMSCS_LIB_ROOT)' == ''">$(WDMSCS_LIB)</WDMSCS_LIB_ROOT>
     <WDMSCS_LIB>$(WDMSCS_LIB_ROOT)\$(Platform)\$(Configuration)</WDMSCS_LIB>
   </PropertyGroup>

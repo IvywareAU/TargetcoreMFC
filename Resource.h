@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by TargetCoreMFC.rc
+// Used by TargetcoreMFC.rc
 //
 #define IDP_SOCKETS_INIT_FAILED         101
 #define ID_SORTPROPERTIES               151

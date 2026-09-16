@@ -5,10 +5,10 @@
 #pragma once
 
 //
-//  TargetCoreMFC.h dependancy
+//  TargetcoreMFC.h dependancy
 //  NOTES: Either defined here or with the preprocessor definitions
-//#ifndef TargetCoreMFC_EXT
-//#define TargetCoreMFC_EXT
+//#ifndef TargetcoreMFC_EXT
+//#define TargetcoreMFC_EXT
 //#endif
 #ifndef VC_EXTRALEAN
 #define VC_EXTRALEAN            // Exclude rarely-used stuff from Windows headers

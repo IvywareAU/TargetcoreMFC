@@ -22,7 +22,7 @@
 //
 
 #include "stdafx.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "BrushDialog.h"
 #include "MFCPropertyGridBrushProperty.h"
 #include "afxcontrolbarutil.h"

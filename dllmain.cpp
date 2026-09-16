@@ -15,7 +15,7 @@
 //
 //
 //  Defines the initialization routines for the DLL.
-//  NOTES: Refer TargetCoreMFC.h for export and import of
+//  NOTES: Refer TargetcoreMFC.h for export and import of
 //         DLL symbols
 //       : Initialising MFC extension DLL's
 //         http://msdn.microsoft.com/en-us/library/h5f7ck28.aspx
@@ -24,7 +24,7 @@
 //         P2PresourceState class has been introduce to negate such
 
 #include "stdafx.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include <afxwin.h>                    // VS2012 Wizard extension
 #include <afxdllx.h>
 
@@ -32,25 +32,25 @@
 #define new DEBUG_NEW
 #endif
 //extern "C" { int _afxForceUSRDLL; } 
-//HINSTANCE g_hTargetCoreMFC_DLL = 0;
+//HINSTANCE g_hTargetcoreMFC_DLL = 0;
 
-static AFX_EXTENSION_MODULE NEAR TargetCoreMFC_DLL = { NULL, NULL };
+static AFX_EXTENSION_MODULE NEAR TargetcoreMFC_DLL = { NULL, NULL };
 
 extern "C" int APIENTRY
 DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 {
 	// Remove this if you use lpReserved
 	UNREFERENCED_PARAMETER(lpReserved);
-  //g_hTargetCoreMFC_DLL = hInstance;
+  //g_hTargetcoreMFC_DLL = hInstance;
 
 	if (dwReason == DLL_PROCESS_ATTACH)
 	{
-		TRACE0("TargetCoreMFC.DLL Initializing!\n");
+		TRACE0("TargetcoreMFC.DLL Initializing!\n");
 		
 		// Extension DLL one-time initialization
-		if ( !AfxInitExtensionModule(TargetCoreMFC_DLL,hInstance) )
+		if ( !AfxInitExtensionModule(TargetcoreMFC_DLL,hInstance) )
     {
-      TRACE0("TargetCoreMFC.DLL AfxInitExtensionModule() failed");
+      TRACE0("TargetcoreMFC.DLL AfxInitExtensionModule() failed");
 			return 0;
     }
 
@@ -66,30 +66,30 @@ DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
 		//  Regular DLL's resource chain, and serious problems will
 		//  result.
 
-		new CDynLinkLibrary(TargetCoreMFC_DLL);
+		new CDynLinkLibrary(TargetcoreMFC_DLL);
 
 	}
 	else if (dwReason == DLL_PROCESS_DETACH)
 	{
-		TRACE0("TargetCoreMFC.DLL Terminating!\n");
+		TRACE0("TargetcoreMFC.DLL Terminating!\n");
   
 		// Terminate the library before destructors are called
-		AfxTermExtensionModule(TargetCoreMFC_DLL);
+		AfxTermExtensionModule(TargetcoreMFC_DLL);
 	}
 	return 1;   // ok
 }
 
 //
-//  Manages MFC resource state for this TargetCoreMFC DLL
+//  Manages MFC resource state for this TargetcoreMFC DLL
 //  NOTES: Each extension DLL requires its own private implementation
-//         based around the TargetCoreMFC_DLL equivalent external.
+//         based around the TargetcoreMFC_DLL equivalent external.
 //       : Code ia duplicated for each MFC extension DLL.  Not unlike
 //         the way Dllmain() is replicated
 P2PresourceState::P2PresourceState()
 {
     m_hRestore = AfxGetResourceHandle();
-    if ( m_hRestore != TargetCoreMFC_DLL.hModule )
-      AfxSetResourceHandle(TargetCoreMFC_DLL.hModule);
+    if ( m_hRestore != TargetcoreMFC_DLL.hModule )
+      AfxSetResourceHandle(TargetcoreMFC_DLL.hModule);
     else           // We are our own state
       m_hRestore = NULL;
 }

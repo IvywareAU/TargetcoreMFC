@@ -23,7 +23,7 @@
 
 // CSVDialog dialog
 
-class TargetCoreMFC_EXT CSVDialog : public CDialogEx
+class TargetcoreMFC_EXT CSVDialog : public CDialogEx
 {
 	  DECLARE_DYNAMIC(CSVDialog)
       void

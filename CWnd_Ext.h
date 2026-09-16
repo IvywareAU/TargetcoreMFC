@@ -18,30 +18,30 @@
 //
 
 #pragma   once
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 
 //
 //  CWnd message broadcasting
 //  NOTES: Static functions are just simpler
 //       : Facilitates message broadcasting to registered clients
 //
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CWnd_BCastRegister( CWnd *pCWnd, UINT nID, BOOL bRegister );
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CWnd_BCastMessage ( UINT nID, WPARAM wParam, LPARAM lParam );
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CWnd_BCastCancel  ( CWnd *pCWnd );
 
 //
 //  Targeted CWnd message broadcasting
 //  NOTES: Static functions allow for scattered hierarchy of windows
 //       : Facilitates message broadcasting to registered clients within domain
-//TargetCoreMFC_EXT UINT
+//TargetcoreMFC_EXT UINT
 //CWnd_CreateTarget ( );
-//TargetCoreMFC_EXT BOOL
+//TargetcoreMFC_EXT BOOL
 //CWnd_RegisterTarget( UINT nCWndTargetID, CWnd *pCWnd, UINT nWMid, BOOL bRegister );
-//TargetCoreMFC_EXT BOOL
+//TargetcoreMFC_EXT BOOL
 //CWnd_BCastTargets ( UINT nCWndTargetID, UINT nWMid, WPARAM wParam, LPARAM lParam );
-//TargetCoreMFC_EXT UINT
+//TargetcoreMFC_EXT UINT
 //CWnd_CloseTarget ( UINT nCWndTargetID );
 

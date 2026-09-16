@@ -45,7 +45,7 @@
 // CMFCPropertyGridPenProperty
 typedef CMap<CString,LPCTSTR,DWORD,DWORD> CMap_String_DWORD;
 
-class TargetCoreMFC_EXT CMFCPropertyGridEnumProperty : public CMFCPropertyGridProperty
+class TargetcoreMFC_EXT CMFCPropertyGridEnumProperty : public CMFCPropertyGridProperty
 {
     DECLARE_DYNAMIC(CMFCPropertyGridEnumProperty)
 

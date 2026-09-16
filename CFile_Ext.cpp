@@ -157,7 +157,7 @@ CFile_Memory2File ( LPCTSTR lpszFilename, char *pcDumpBuffer, DWORD dwDumpBuffer
 //                 TRUE... File exists
 //                 FALSE.. File does not exist
 //
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CFile_Exists ( LPCTSTR lpszFilename )
 {
     return PathFileExists ( lpszFilename );
@@ -171,7 +171,7 @@ CFile_Exists ( LPCTSTR lpszFilename )
 //                 TRUE... Directory file
 //                 FALSE.. Not a directory file
 //
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CFile_IsDirectory ( LPCTSTR lpszFilename )
 {
     CFileStatus status;
@@ -193,7 +193,7 @@ CFile_IsDirectory ( LPCTSTR lpszFilename )
 //                 0... Error
 //                 ?... File length
 //
-TargetCoreMFC_EXT ULONGLONG
+TargetcoreMFC_EXT ULONGLONG
 CFile_Length ( LPCTSTR lpszFilename )
 {
     // Make exception safe
@@ -211,7 +211,7 @@ CFile_Length ( LPCTSTR lpszFilename )
 }
 
 
-TargetCoreMFC_EXT CString  
+TargetcoreMFC_EXT CString  
 CFile_Directory(LPCTSTR lpszPathname)  
 {  
     wchar_t szDrive[_MAX_DRIVE];  
@@ -226,7 +226,7 @@ CFile_Directory(LPCTSTR lpszPathname)
     return CString(szDirectory);  
 }
 
-TargetCoreMFC_EXT CString
+TargetcoreMFC_EXT CString
 CFile_Drive ( LPCTSTR lpszPathname )
 {
     wchar_t szDrive    [_MAX_DRIVE];
@@ -251,7 +251,7 @@ CFile_Drive ( LPCTSTR lpszPathname )
 //
 //  Returns:     CString
 //               Translated path
-TargetCoreMFC_EXT CString
+TargetcoreMFC_EXT CString
 CFile_PreprocessPath ( LPCTSTR lpszPathname )
 {
     CString strPathname = lpszPathname;
@@ -286,7 +286,7 @@ CFile_PreprocessPath ( LPCTSTR lpszPathname )
 //  Returns:     int
 //               SHFileOperation() return result
 //
-TargetCoreMFC_EXT int
+TargetcoreMFC_EXT int
 CFile_SHFileOperation ( HWND hWndParent, LPCTSTR lpszSourceFolder, LPCTSTR lpszDestinFolder )
 {
 	//Log(_T("Recursive file copy lpszSourceFolder %s to %s"), lpszSourceFolder, to);

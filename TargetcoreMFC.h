@@ -14,24 +14,24 @@
 // permissions and limitations under the License.
 //
 //
-//  Implements TargetCoreMFC.DLL extension class definitions
+//  Implements TargetcoreMFC.DLL extension class definitions
 //  NOTES: To be included with the definitions for any object exported
-//         from the TargetCoreMFC.DLL
+//         from the TargetcoreMFC.DLL
 //       : Patterned on the MFC_EXT_CLASS concept
-//       : Either the TargetCoreMFC project or the StdAfx.h file MUST
-//         contain the TargetCoreMFC_EXPORTS definition.  For further Developer
+//       : Either the TargetcoreMFC project or the StdAfx.h file MUST
+//         contain the TargetcoreMFC_EXPORTS definition.  For further Developer
 //         Studio details refer Project Properties >> Config >> C/C++
 //         Preprocessor
 //
 
 #pragma once
 
-#include "TargetCoreMFC_version.h"
+#include "TargetcoreMFC_version.h"
 
-#if defined (TargetCoreMFC_EXPORTS)
-  #define TargetCoreMFC_EXT __declspec(dllexport)
+#if defined (TargetcoreMFC_EXPORTS)
+  #define TargetcoreMFC_EXT __declspec(dllexport)
 #else
-  #define TargetCoreMFC_EXT __declspec(dllimport)
+  #define TargetcoreMFC_EXT __declspec(dllimport)
 #endif
 
 //
@@ -47,7 +47,7 @@
 //           MANAGE_RESOURCE_STATE;
 //           return CDialog::DoModal_EoD();
 //         }
-#if defined (TargetCoreMFC_EXPORTS)
+#if defined (TargetcoreMFC_EXPORTS)
 class P2PresourceState                 // Do not export
 {
     public:

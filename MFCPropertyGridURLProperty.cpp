@@ -22,7 +22,7 @@
 //
 
 #include "stdafx.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "URLDialog.h"
 #include "MFCPropertyGridURLProperty.h"
 #include "afxcontrolbarutil.h"

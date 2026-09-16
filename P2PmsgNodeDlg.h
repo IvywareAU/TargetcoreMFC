@@ -18,13 +18,13 @@
 //
 #pragma once
 
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "P2PmsgMgr.h"
 #include "P2PmsgTreeCtrl.h"
 
 // CP2PmsgNodeDlg dialog
 
-class TargetCoreMFC_EXT CP2PmsgNodeDlg : public CDialogEx
+class TargetcoreMFC_EXT CP2PmsgNodeDlg : public CDialogEx
 {
     DECLARE_DYNAMIC(CP2PmsgNodeDlg)
     // Constructors and destructor

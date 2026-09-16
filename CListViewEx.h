@@ -21,10 +21,10 @@
 //
 #pragma once
 #include "stdafx.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "InPlaceEdit.h"
 
-class TargetCoreMFC_EXT CEditableListCtrl : public CListCtrl
+class TargetcoreMFC_EXT CEditableListCtrl : public CListCtrl
 {
     // Constructors and destructor
     public:

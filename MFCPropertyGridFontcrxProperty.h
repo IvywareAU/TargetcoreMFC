@@ -28,7 +28,7 @@
 #include "afxcontrolbarutil.h"
 
 #include "afxglobals.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "CFont_Ext.h"
 
 //#include "afxcolorpopupmenu.h"

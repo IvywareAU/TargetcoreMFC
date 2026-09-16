@@ -19,7 +19,7 @@
 //
 
 #include "stdafx.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "CSVDialog.h"
 #include "afxdialogex.h"
 #include "CWndApp_Ext.h"

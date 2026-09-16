@@ -13,11 +13,11 @@
 // implied. See the License for the specific language governing
 // permissions and limitations under the License.
 //
-// TargetCoreMFCSuite.cpp
+// TargetcoreMFCSuite.cpp
 //
 // The headless half of this library.
 //
-// TargetCoreMFC is the VISUAL layer of the family: tree controls, property
+// TargetcoreMFC is the VISUAL layer of the family: tree controls, property
 // grids, drop targets and dialogs bound to a live store. Almost all of that
 // needs a window, a message pump and a desktop, so the honest testable surface
 // here is much thinner than MsgcoreMFC's - essentially CFile_Ext, which is
@@ -52,7 +52,7 @@ class ScratchDir
         {
             wchar_t szTemp[MAX_PATH] = { 0 };
             ::GetTempPathW(MAX_PATH, szTemp);
-            m_strPath.Format(L"%lsTargetCoreMFC_tests_%lu", szTemp,
+            m_strPath.Format(L"%lsTargetcoreMFC_tests_%lu", szTemp,
                              (unsigned long)::GetCurrentProcessId());
             ::CreateDirectoryW(m_strPath, nullptr);
         }
@@ -148,7 +148,7 @@ static void CFile_Filesystem_Cases()
     TF_CASE("Memory2File then Load2Memory round-trips the bytes")
     {
         const CString strFile = scratch.File(L"roundtrip.bin");
-        char szPayload[] = "TargetCoreMFC round trip payload";
+        char szPayload[] = "TargetcoreMFC round trip payload";
         const DWORD dwLen = (DWORD)strlen(szPayload);
 
         // CFile_Memory2File opens TRUNCATE_EXISTING, so the file has to be
@@ -188,7 +188,7 @@ static void CFile_Filesystem_Cases()
 }
 
 // ---------------------------------------------------------------------------
-void RunTargetCoreMFCSuite()
+void RunTargetcoreMFCSuite()
 {
     CFile_Path_Cases();
     CFile_Filesystem_Cases();

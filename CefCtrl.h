@@ -17,11 +17,11 @@
 //  CefCtrl definitions and prototypes
 //
 #pragma once
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 
 // CefCtrl
 
-class TargetCoreMFC_EXT CefCtrl : public CWnd
+class TargetcoreMFC_EXT CefCtrl : public CWnd
 {
     DECLARE_DYNAMIC(CefCtrl)
 

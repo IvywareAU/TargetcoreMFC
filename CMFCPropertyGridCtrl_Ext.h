@@ -18,7 +18,7 @@
 //  NOTES:
 //
 #pragma   once
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "CFont_Ext.h"
 #include "P2Pmsg.h"
 
@@ -31,21 +31,21 @@
 //               P3PmsgNode *pNode or P3PmsgField *pField
 //               Poluation data
 //
-TargetCoreMFC_EXT CMFCPropertyGridProperty*
+TargetcoreMFC_EXT CMFCPropertyGridProperty*
 CMFCPropertyGridCtrl_CreateGroup ( P3PmsgItem *pItem );
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CMFCPropertyGridCtrl_Init ( CMFCPropertyGridCtrl *pCtrl, P3PmsgItem *pItem );
 
-TargetCoreMFC_EXT CMFCPropertyGridProperty*
+TargetcoreMFC_EXT CMFCPropertyGridProperty*
 Create4Grid_HEADING ( LPCSTR lpszHeading, LPCTSTR lpszDescription );
-TargetCoreMFC_EXT CMFCPropertyGridProperty*
+TargetcoreMFC_EXT CMFCPropertyGridProperty*
 Create4Grid_COLOR ( P3PmsgItem& oItem, LPCSTR lpszHeading, LPCTSTR lpszDescription );
-TargetCoreMFC_EXT CMFCPropertyGridProperty*
+TargetcoreMFC_EXT CMFCPropertyGridProperty*
 Create4Grid ( P3PmsgItem& oItem, LPCSTR lpszHeading, LPCTSTR lpszDescription );
 
 //
 //  CMFCPropertyGridFontProperty extension
-/*class TargetCoreMFC_EXT CMFCPropertyGridFontcrxProperty : public CMFCPropertyGridFontProperty
+/*class TargetcoreMFC_EXT CMFCPropertyGridFontcrxProperty : public CMFCPropertyGridFontProperty
 {
     public:
         CMFCPropertyGridFontcrxProperty ( const CString& strName

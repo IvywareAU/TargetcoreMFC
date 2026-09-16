@@ -93,5 +93,5 @@ a working exploit for any of them is still worth reporting — it changes the pr
 | 3.0.x | Yes |
 | earlier, and everything released as P2PmsgMFC | No |
 
-Version identity comes from `TargetCoreMFC_version.h`; the DLL reports it in its `VERSIONINFO`
+Version identity comes from `TargetcoreMFC_version.h`; the DLL reports it in its `VERSIONINFO`
 resource, so `FileVersion` on the shipped binary is the number to quote in a report.

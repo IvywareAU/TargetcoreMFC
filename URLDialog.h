@@ -23,7 +23,7 @@
 
 // CURLDialog dialog
 
-class TargetCoreMFC_EXT CURLDialog : public CDialogEx
+class TargetcoreMFC_EXT CURLDialog : public CDialogEx
 {
 	  DECLARE_DYNAMIC(CURLDialog)
       void

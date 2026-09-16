@@ -19,7 +19,7 @@
 //  NOTES:
 //
 #pragma once
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 //#include <afxribbon.h>
 #include <afxdtctl.h>   // for CMonthCalCtrl
 // CalendarPopup.h
@@ -61,7 +61,7 @@ class CCalendarPopup : public CWnd
         OnCalSelect(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
-class TargetCoreMFC_EXT CMFCRibbonDatePickerControl : public CMFCRibbonBaseElement
+class TargetcoreMFC_EXT CMFCRibbonDatePickerControl : public CMFCRibbonBaseElement
 {
     DECLARE_DYNCREATE(CMFCRibbonDatePickerControl)
     friend class CCalendarPopup;

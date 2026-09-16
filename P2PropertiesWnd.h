@@ -19,7 +19,7 @@
 //
 
 #pragma once
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "P2PeerTarget.h"
 #include "P2Pmsg.h"
 
@@ -46,7 +46,7 @@ class CP2PropertiesToolBar : public CMFCToolBar
         OnNeedTipText(UINT /*id*/, NMHDR* pNMH, LRESULT* /*pResult*/);
 };
 
-class TargetCoreMFC_EXT CP2PropertiesWnd : public CDockablePane
+class TargetcoreMFC_EXT CP2PropertiesWnd : public CDockablePane
 {
     friend class SafeP2PropsConfig;
     // Constructors and destructor
@@ -284,7 +284,7 @@ public:
 //       : In summary protects against orphaned P2PropertiesWnd grids trying
 //         to reference back into objects that no longer exist
 //
-class TargetCoreMFC_EXT SafeP2PropsConfig
+class TargetcoreMFC_EXT SafeP2PropsConfig
 {
     // Constructors and destruction
     public:

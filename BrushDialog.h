@@ -26,7 +26,7 @@
 //
 //  CBrushDialog dialog
 //  NOTES: Brush parameter management
-class TargetCoreMFC_EXT CBrushDialog : public CDialogEx
+class TargetcoreMFC_EXT CBrushDialog : public CDialogEx
 {
 	  DECLARE_DYNAMIC(CBrushDialog)
       void

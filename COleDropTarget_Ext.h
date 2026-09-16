@@ -20,11 +20,11 @@
 //
 #pragma once
 #include <afxole.h>
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 
 //
 // Helpers
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 COleDropTarget_Wildcard ( COleDataObject *pDataObject, LPCTSTR lpszWildcard );
 
 //
@@ -48,7 +48,7 @@ typedef BOOL (CALLBACK *fpntOnDrop)(/*DWORD_PTR dwUser,*/ COleDataObject* pDataO
  
 struct IDropTargetHelper;   // forward reference, in case the latest PSDK isn't installed.
 
-class TargetCoreMFC_EXT COleDropTargetEx : public COleDropTarget  
+class TargetcoreMFC_EXT COleDropTargetEx : public COleDropTarget  
 {
     // Constructors & destructor
     public:
@@ -91,7 +91,7 @@ class TargetCoreMFC_EXT COleDropTargetEx : public COleDropTarget
 //    BOOL ReadHdropData ( COleDataObject* pDataObject );
 };
 
-class TargetCoreMFC_EXT COleDataObjectEx
+class TargetcoreMFC_EXT COleDataObjectEx
 {
     // Constructors & destructor
     public:

@@ -22,7 +22,7 @@
 //
 
 #include "stdafx.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "PencrxDialog.h"
 #include "MFCPropertyGridPencrxProperty.h"
 #include "afxcontrolbarutil.h"

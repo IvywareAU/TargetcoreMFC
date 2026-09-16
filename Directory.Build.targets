@@ -1,30 +1,30 @@
 <Project>
   <!--
-    Repo-root MSBuild targets for the TargetCoreMFC repository — companion to
+    Repo-root MSBuild targets for the TargetcoreMFC repository — companion to
     Directory.Build.props, which defaults $(WDMSCS_LIB) for a standalone clone.
 
     As with the .props, MSBuild imports only the NEAREST Directory.Build.targets, so this
     file shadows MSCS\Directory.Build.targets for the projects in this repository. Chain to
     the outer file when it exists so nothing it does is lost inside the MSCS tree; the two
-    targets below then guard only the standalone case, keyed off $(TargetCoreMFCStandalone)
+    targets below then guard only the standalone case, keyed off $(TargetcoreMFCStandalone)
     from Directory.Build.props. They are deliberately NOT named after the outer file's
     targets: same names would silently redefine them rather than run alongside.
   -->
 
   <PropertyGroup>
-    <TargetCoreMFCOuterBuildTargets>$([MSBuild]::GetPathOfFileAbove('Directory.Build.targets', '$(MSBuildThisFileDirectory)../'))</TargetCoreMFCOuterBuildTargets>
+    <TargetcoreMFCOuterBuildTargets>$([MSBuild]::GetPathOfFileAbove('Directory.Build.targets', '$(MSBuildThisFileDirectory)../'))</TargetcoreMFCOuterBuildTargets>
   </PropertyGroup>
 
-  <Import Project="$(TargetCoreMFCOuterBuildTargets)"
-          Condition="'$(TargetCoreMFCOuterBuildTargets)' != '' and Exists('$(TargetCoreMFCOuterBuildTargets)')" />
+  <Import Project="$(TargetcoreMFCOuterBuildTargets)"
+          Condition="'$(TargetcoreMFCOuterBuildTargets)' != '' and Exists('$(TargetcoreMFCOuterBuildTargets)')" />
 
   <!--
     Ensure the per-platform import-library directory exists before the linker writes into it.
     link.exe normally creates it, so this is belt-and-suspenders for fresh checkouts and CI
     where lib\ may not exist at all.
   -->
-  <Target Name="TargetCoreMFCEnsureWDMSCSLibDir" BeforeTargets="Link;Lib"
-          Condition="'$(TargetCoreMFCStandalone)' == 'true' and '$(WDMSCS_LIB)' != ''">
+  <Target Name="TargetcoreMFCEnsureWDMSCSLibDir" BeforeTargets="Link;Lib"
+          Condition="'$(TargetcoreMFCStandalone)' == 'true' and '$(WDMSCS_LIB)' != ''">
     <MakeDir Directories="$(WDMSCS_LIB)" />
   </Target>
 
@@ -36,10 +36,10 @@
     a stale copy.
 
     "Fully qualified" is tested as a drive letter or a UNC prefix, NOT with
-    Path.IsPathRooted: that returns TRUE for "\TargetCoreMFC.lib", the very case this catches.
+    Path.IsPathRooted: that returns TRUE for "\TargetcoreMFC.lib", the very case this catches.
   -->
-  <Target Name="TargetCoreMFCValidateWDMSCSLib" BeforeTargets="Link;Lib"
-          Condition="'$(TargetCoreMFCStandalone)' == 'true'">
+  <Target Name="TargetcoreMFCValidateWDMSCSLib" BeforeTargets="Link;Lib"
+          Condition="'$(TargetcoreMFCStandalone)' == 'true'">
     <Error Condition="'$(WDMSCS_LIB)' == ''"
            Text="WDMSCS_LIB is empty. &lt;ImportLibrary&gt; would become '\$(TargetName).lib' and the linker would write the import library and its .exp to the ROOT OF THE CURRENT DRIVE. Directory.Build.props defaults this variable, so an empty value means it was overridden with nothing — set WDMSCS_LIB to an absolute directory, or unset it entirely and let the default apply." />
     <Error Condition="'$(WDMSCS_LIB)' != '' and !$(WDMSCS_LIB.Contains(':')) and !$(WDMSCS_LIB.StartsWith('\\'))"

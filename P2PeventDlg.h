@@ -20,12 +20,12 @@
 
 #include "Msgexception.h"
 #include "DlgToolBar.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 
 
 // CP2PeventDlg dialog
 
-class TargetCoreMFC_EXT CP2PeventDlg : public CDialog
+class TargetcoreMFC_EXT CP2PeventDlg : public CDialog
 {
 	  DECLARE_DYNAMIC(CP2PeventDlg)
     // Constructors and destructor

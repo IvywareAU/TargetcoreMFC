@@ -19,7 +19,7 @@
 //
 
 #include "stdafx.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 #include "BrushDialog.h"
 #include "afxdialogex.h"
 

@@ -19,7 +19,7 @@
 
 #pragma   once
 #include "P2Pmsg.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 
 //
 //  P2Peer library Safe Pointer template

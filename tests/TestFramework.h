@@ -15,7 +15,7 @@
 //
 // TestFramework.h
 //
-// A tiny, dependency-free assertion harness for the TargetCoreMFC suites.
+// A tiny, dependency-free assertion harness for the TargetcoreMFC suites.
 //
 // PROVENANCE. This is Msgcore's tests/TestFramework.h, carried here verbatim in
 // its TF_CASE / TF_CHECK / TF_CHECK_EQ surface and deliberately so: the two
@@ -24,7 +24,7 @@
 // meaning. Only the suite entry points below differ.
 //
 // The CWinApp anchor and the assert trap matter MORE here than they do upstream.
-// TargetCoreMFC is an MFC extension DLL: its objects are MFC objects, and a Debug
+// TargetcoreMFC is an MFC extension DLL: its objects are MFC objects, and a Debug
 // build of MFC asserts freely. Without the trap the first ASSERT opens a modal
 // dialog and a headless run hangs with no output.
 //
@@ -88,4 +88,4 @@ int  tf_runner_finish(int nSkipped);
 // Only the suites THIS repository owns are declared. Msgcore's and MsgcoreMFC's
 // suites stay with those libraries; declaring them here would read as though
 // this runner covered them.
-void RunTargetCoreMFCSuite();
+void RunTargetcoreMFCSuite();

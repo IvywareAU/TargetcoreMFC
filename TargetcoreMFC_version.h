@@ -13,12 +13,12 @@
 // implied. See the License for the specific language governing
 // permissions and limitations under the License.
 //
-//  TargetCoreMFC_version.h - the single source of version identity.
+//  TargetcoreMFC_version.h - the single source of version identity.
 //
 //  NOTES: This header is the ONLY place a version number is written. It is
 //         consumed by two parties that must never disagree:
-//           - TargetCoreMFC.rc -> the DLL's VERSIONINFO resource
-//           - TargetCoreMFC.h  -> the compile-time macros a consumer tests
+//           - TargetcoreMFC.rc -> the DLL's VERSIONINFO resource
+//           - TargetcoreMFC.h  -> the compile-time macros a consumer tests
 //                                 against
 //         Bump it here and both of them move together.
 //       : This file exists because they DID disagree. Before it, the resource
@@ -41,11 +41,11 @@
 //  Component version. MAJOR.MINOR.PATCH is the released identity; BUILD is
 //  reserved for a CI build counter and is 0 for a hand-built binary.
 //
-//  3.0.0.0, MATCHING TargetCore, whose MFC layer this is and whose name it now
+//  3.0.0.0, MATCHING Targetcore, whose MFC layer this is and whose name it now
 //  carries. That is a deliberate choice and not a rule: MsgcoreMFC tracks its
 //  own number independently of Msgcore, and this library may yet need to. It
 //  is held equal for as long as the two ship together, because a consumer that
-//  links TargetCore.lib and TargetCoreMFC.lib from different releases has a
+//  links Targetcore.lib and TargetcoreMFC.lib from different releases has a
 //  problem the version numbers should make visible rather than hide.
 #define TARGETCOREMFC_VERSION_MAJOR  3
 #define TARGETCOREMFC_VERSION_MINOR  0
@@ -71,7 +71,7 @@
 
 //  Fixed identity strings shared by the resource.
 #define TARGETCOREMFC_COMPANY_NAME   "Ivyware Pty Ltd, Khrustal & Mann"
-#define TARGETCOREMFC_PRODUCT_NAME   "TargetCoreMFC"
+#define TARGETCOREMFC_PRODUCT_NAME   "TargetcoreMFC"
 #define TARGETCOREMFC_COPYRIGHT      "Copyright \251 2006-2026 Ivyware Pty Ltd, Khrustal & Mann. " \
                                      "Licensed under the Apache License, Version 2.0."
 
@@ -81,7 +81,7 @@
 //  available to rc.exe, which cannot evaluate a function-like macro.
 //
 //    #if !TARGETCOREMFC_VERSION_AT_LEAST(3,0,0)
-//    #  error TargetCoreMFC 3.0.0 or later is required
+//    #  error TargetcoreMFC 3.0.0 or later is required
 //    #endif
 //
 #define TARGETCOREMFC_VERSION_AT_LEAST(maj,min,pat) \

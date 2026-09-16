@@ -1,7 +1,7 @@
-# TargetCoreMFC
+# TargetcoreMFC
 
 **The visual layer of the MSCS family: MFC controls, property grids and dialogs bound to a live
-TargetCore store.**
+Targetcore store.**
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 [![Language](https://img.shields.io/badge/C%2B%2B-20-00599C.svg)](#requirements)
@@ -14,7 +14,7 @@ library does the other half: it puts the *store itself* on screen, as something 
 at, expand, drag and edit.
 
 A `P2PmsgMgr` is a tree of named fields with typed values and `@`-qualified attributes. That is
-already the shape of a tree control and of a property grid, and TargetCoreMFC is the binding
+already the shape of a tree control and of a property grid, and TargetcoreMFC is the binding
 between them — a `CTreeCtrl` whose nodes are the store's nodes, and a `CMFCPropertyGridCtrl` whose
 rows are the store's fields, edited in place and written straight back.
 
@@ -27,9 +27,9 @@ m_wndProperties.AddItem ( pGroup, mgr.r_Desc()[L"window"][L"title"],
 ```
 
 > **This library was called `P2PmsgMFC` until 2026** and produced `P2PmsgMFC.dll`. It was renamed
-> to match the component it is the MFC layer of: it links `TargetCore.lib`, and the old name
-> described a message type rather than a component. Consumers link `TargetCoreMFC.lib` and include
-> `TargetCoreMFC.h`; the export macro is `TargetCoreMFC_EXT`.
+> to match the component it is the MFC layer of: it links `Targetcore.lib`, and the old name
+> described a message type rather than a component. Consumers link `TargetcoreMFC.lib` and include
+> `TargetcoreMFC.h`; the export macro is `TargetcoreMFC_EXT`.
 
 ---
 
@@ -40,7 +40,7 @@ under one C++ standard. The unit suite runs green: 10 cases, 22 checks. Version 
 and comes from a single header.
 
 The 32-bit configurations build for the first time in a long while. They had been failing with
-`LNK1104: cannot open file 'TargetCore.lib'` because nothing had ever built TargetCore for Win32;
+`LNK1104: cannot open file 'Targetcore.lib'` because nothing had ever built Targetcore for Win32;
 the project references added here build it.
 
 The window-bound surface — which is most of this library — has no automated coverage, because
@@ -95,7 +95,7 @@ tests.
 * Visual Studio 2026, platform toolset **v145**, Windows SDK 10.
 * MFC, used as a **shared** (dynamic) library — this project is an MFC extension DLL, built with
   `_AFXEXT`, `/std:c++20` and Unicode throughout, in all four configurations.
-* **Msgcore**, **TargetCore** and **MsgcoreMFC**, checked out as sibling directories. They are
+* **Msgcore**, **Targetcore** and **MsgcoreMFC**, checked out as sibling directories. They are
   built for you: see *Building*.
 
 No environment variable is required. `$(WDMSCS_LIB)` defaults to `MSCS\lib` through the repo-root
@@ -105,11 +105,11 @@ send the import library somewhere nobody will look for it. An explicit `WDMSCS_L
 **Outside the MSCS tree**, this repository's own `Directory.Build.props` takes over: it chains to
 an outer one when there is one, so nothing changes for an in-tree build, and otherwise defaults
 `$(WDMSCS_LIB)` to the `lib\` *beside* this repository — the shared staging directory for a row of
-sibling clones, since this project links `Msgcore.lib`, `TargetCore.lib` and `MsgcoreMFC.lib` and
+sibling clones, since this project links `Msgcore.lib`, `Targetcore.lib` and `MsgcoreMFC.lib` and
 must find all three where those builds left them. That default only covers the simplest layout.
 **If you clone the components side by side, set `WDMSCS_LIB` once to a single absolute directory
 and build them all with it**; the sibling repositories do not all agree on a default, and
-`TargetCore` has no repo-local `Directory.Build.props` at all, so it needs the variable rather
+`Targetcore` has no repo-local `Directory.Build.props` at all, so it needs the variable rather
 than merely preferring it.
 `WDMSCS_VSUTILS` is optional: when defined, a post-build step publishes the DLL into the shared
 MSCS tree.
@@ -117,10 +117,10 @@ MSCS tree.
 ## Building
 
 ```
-msbuild "TargetCoreMFC(2026).sln" -p:Configuration=Debug   -p:Platform=x64
-msbuild "TargetCoreMFC(2026).sln" -p:Configuration=Release -p:Platform=x64
-msbuild "TargetCoreMFC(2026).sln" -p:Configuration=Debug   -p:Platform=x86
-msbuild "TargetCoreMFC(2026).sln" -p:Configuration=Release -p:Platform=x86
+msbuild "TargetcoreMFC(2026).sln" -p:Configuration=Debug   -p:Platform=x64
+msbuild "TargetcoreMFC(2026).sln" -p:Configuration=Release -p:Platform=x64
+msbuild "TargetcoreMFC(2026).sln" -p:Configuration=Debug   -p:Platform=x86
+msbuild "TargetcoreMFC(2026).sln" -p:Configuration=Release -p:Platform=x86
 ```
 
 The solution names the 32-bit platform **`x86`**, while the project underneath names it `Win32`.
@@ -132,8 +132,8 @@ one that is linked. Their own warnings appear in the log as a result; they belon
 projects, and this one contributes none.
 
 Everything lands under one root, `out\<Platform>\<Configuration>\`, with intermediates in `obj\`
-inside it. At run time a consumer needs `Msgcore.dll`, `TargetCore.dll` and `MsgcoreMFC.dll`
-beside `TargetCoreMFC.dll`.
+inside it. At run time a consumer needs `Msgcore.dll`, `Targetcore.dll` and `MsgcoreMFC.dll`
+beside `TargetcoreMFC.dll`.
 
 ## Tests
 
@@ -151,13 +151,13 @@ itself out.
 
 ## Versioning
 
-`TargetCoreMFC_version.h` is the single source of version identity, at **3.0.0.0**, matching
-TargetCore. The resource script reads `FILEVERSION`, `PRODUCTVERSION` and both version strings from
-it, and `TargetCoreMFC.h` exposes the macros to consumers:
+`TargetcoreMFC_version.h` is the single source of version identity, at **3.0.0.0**, matching
+Targetcore. The resource script reads `FILEVERSION`, `PRODUCTVERSION` and both version strings from
+it, and `TargetcoreMFC.h` exposes the macros to consumers:
 
 ```cpp
 #if !TARGETCOREMFC_VERSION_AT_LEAST(3,0,0)
-#  error TargetCoreMFC 3.0.0 or later is required
+#  error TargetcoreMFC 3.0.0 or later is required
 #endif
 ```
 
@@ -179,7 +179,7 @@ configurations must build warning-free, and the suite must stay green.
 
 # Licence
 
-TargetCoreMFC is licensed under the **Apache License, Version 2.0**. See [`LICENSE`](LICENSE) for
+TargetcoreMFC is licensed under the **Apache License, Version 2.0**. See [`LICENSE`](LICENSE) for
 the full text, or <http://www.apache.org/licenses/LICENSE-2.0>.
 
 ```
@@ -202,7 +202,7 @@ limitations under the License.
 
 Some files here are Microsoft project-template, wizard-generated or sample-derived files. They keep
 Microsoft's own notices and are **not** licensed under Apache 2.0: `Targetver.h`, `Resource.h`,
-`TargetCoreMFC.rc`, `res/TargetCoreMFC.rc2`, `stdafx.h`, `stdafx.cpp`, and the Visual Studio
+`TargetcoreMFC.rc`, `res/TargetcoreMFC.rc2`, `stdafx.h`, `stdafx.cpp`, and the Visual Studio
 solution and project files.
 
 **`InPlaceEdit.h` and `InPlaceEdit.cpp` carry no licence header at all, on purpose.** They are the
@@ -216,6 +216,6 @@ repository is published.
 This library is an MFC extension DLL and links against the Microsoft Foundation Classes, the Visual
 C++ runtime, and the Windows SDK — all licensed by Microsoft, none redistributed here.
 
-It also depends on **Msgcore**, **TargetCore** and **MsgcoreMFC**, separate repositories in the
+It also depends on **Msgcore**, **Targetcore** and **MsgcoreMFC**, separate repositories in the
 same family, under the same licence and the same copyright holders. All are dependencies rather
 than bundled code: no source from any of them is included in this repository.

@@ -22,7 +22,7 @@
 //
 
 #include "stdafx.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 //#include "FontDialog.h"
 #include "MFCPropertyGridFontcrxProperty.h"
 #include "afxcontrolbarutil.h"

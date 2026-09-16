@@ -15,10 +15,10 @@
 //
 // TestFramework.cpp
 //
-// The runner lifecycle and assertion bookkeeping for the TargetCoreMFC suites.
+// The runner lifecycle and assertion bookkeeping for the TargetcoreMFC suites.
 // See TestFramework.h for provenance and for the one deliberate divergence
 // from the upstream copy (no StartupP2Pmsg / WSAStartup -- both live in
-// TargetCore, which this repository does not contain).
+// Targetcore, which this repository does not contain).
 //
 // It owns the process-wide lifecycle the suites rely on:
 //   * one CWinApp (MFC requires exactly one per executable),

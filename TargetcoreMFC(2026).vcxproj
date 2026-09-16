@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>TargetcoreMFC</ProjectName>
+    <ProjectGuid>{C890CDB3-7C58-4C74-94B8-DC4465661465}</ProjectGuid>
+    <RootNamespace>TargetcoreMFC</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <!-- One output root for every variant: out\<Platform>\<Configuration>\ for the
+       binaries, with the compiler's intermediates under obj\ inside it. Pinned
+       unconditionally and anchored on $(ProjectDir) so the DLL does not move
+       depending on which solution drove the build. This replaces the x86-only
+       overrides, under which x86 landed in Debug\ and x64 in x64\Debug\, plus the
+       stray P2PmsgMFC\<Platform>\<Config>\ intermediate tree the old project format
+       wrote beside the sources. -->
+  <PropertyGroup>
+    <OutDir>$(ProjectDir)out\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(ProjectDir)out\$(Platform)\$(Configuration)\obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Load-bearing for the ProjectReferences at the foot of this file; see the
+         comment there. A solution build defaults this to true, which strips
+         Configuration and Platform from the properties a referenced project
+         evaluates, and the referenced project then writes its import library to
+         the un-suffixed MSCS\lib\ root. -->
+    <ShouldUnsetParentConfigurationAndPlatform>false</ShouldUnsetParentConfigurationAndPlatform>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildStep>
+      <Command>IF DEFINED WDMSCS_VSUTILS CALL "$(WDMSCS_VSUTILS)\IW_CustomBuildStep.bat" "$(TargetDir)" "$(TargetFileName)" "$(TargetExt)" "$(Configuration)$(PlatformArchitecture)"</Command>
+      <AdditionalInputs>$(TargetPath);%(AdditionalInputs)</AdditionalInputs>
+      <Outputs>$(WDMSCS_DEBUG)\..\$(Configuration)$(PlatformArchitecture)\$(TargetName)$(TargetExt);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Msgcore;..\Targetcore;..\MsgcoreMFC;..\P2PmsgHTTP;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;TargetcoreMFC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BrowseInformation>true</BrowseInformation>
+      <SDLCheck>true</SDLCheck>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName).dll</OutputFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <ImportLibrary>$(WDMSCS_LIB)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(WDMSCS_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Msgcore.lib;Targetcore.lib;MsgcoreMFC.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <CustomBuildStep>
+      <Command>IF DEFINED WDMSCS_VSUTILS CALL "$(WDMSCS_VSUTILS)\IW_CustomBuildStep.bat" "$(TargetDir)" "$(TargetFileName)" "$(TargetExt)" "$(Configuration)$(PlatformArchitecture)"</Command>
+      <AdditionalInputs>$(TargetPath);%(AdditionalInputs)</AdditionalInputs>
+      <Outputs>$(WDMSCS_DEBUG)\..\$(Configuration)$(PlatformArchitecture)\$(TargetName)$(TargetExt);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\Msgcore;..\Targetcore;..\MsgcoreMFC;..\P2PmsgHTTP;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;TargetcoreMFC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BrowseInformation>true</BrowseInformation>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName).dll</OutputFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <ImportLibrary>$(WDMSCS_LIB)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(WDMSCS_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Msgcore.lib;Targetcore.lib;MsgcoreMFC.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <CustomBuildStep>
+      <Command>IF DEFINED WDMSCS_VSUTILS CALL "$(WDMSCS_VSUTILS)\IW_CustomBuildStep.bat" "$(TargetDir)" "$(TargetFileName)" "$(TargetExt)" "$(Configuration)$(PlatformArchitecture)"</Command>
+      <AdditionalInputs>$(TargetPath);%(AdditionalInputs)</AdditionalInputs>
+      <Outputs>$(WDMSCS_DEBUG)\..\$(Configuration)$(PlatformArchitecture)\$(TargetName)$(TargetExt);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;TargetcoreMFC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\Msgcore;..\Targetcore;..\MsgcoreMFC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName).dll</OutputFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(WDMSCS_LIB)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>Msgcore.lib;Targetcore.lib;MsgcoreMFC.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(WDMSCS_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <CustomBuildStep>
+      <Command>IF DEFINED WDMSCS_VSUTILS CALL "$(WDMSCS_VSUTILS)\IW_CustomBuildStep.bat" "$(TargetDir)" "$(TargetFileName)" "$(TargetExt)" "$(Configuration)$(PlatformArchitecture)"</Command>
+      <AdditionalInputs>$(TargetPath);%(AdditionalInputs)</AdditionalInputs>
+      <Outputs>$(WDMSCS_DEBUG)\..\$(Configuration)$(PlatformArchitecture)\$(TargetName)$(TargetExt);%(Outputs)</Outputs>
+    </CustomBuildStep>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;TargetcoreMFC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\Msgcore;..\Targetcore;..\MsgcoreMFC;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName).dll</OutputFile>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <ImportLibrary>$(WDMSCS_LIB)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>Msgcore.lib;Targetcore.lib;MsgcoreMFC.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(WDMSCS_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BrushDialog.cpp" />
+    <ClCompile Include="CefCtrl.cpp" />
+    <ClCompile Include="CFile_Ext.cpp" />
+    <ClCompile Include="CHeaderCtrl_Ext.cpp" />
+    <ClCompile Include="CMFCPropertyGridCtrl_Ext.cpp" />
+    <ClCompile Include="COleDropTarget_Ext.cpp" />
+    <ClCompile Include="CSVDialog.cpp" />
+    <ClCompile Include="CWnd_Ext.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="CListViewEx.cpp" />
+    <ClCompile Include="EnumFilesinFolder.cpp" />
+    <ClCompile Include="InPlaceEdit.cpp" />
+    <ClCompile Include="MFCPropertyGridCSVProperty.cpp" />
+    <ClCompile Include="MFCPropertyGridEnumProperty.cpp" />
+    <ClCompile Include="MFCPropertyGridBrushProperty.cpp" />
+    <ClCompile Include="MFCPropertyGridBnumProperty.cpp" />
+    <ClCompile Include="MFCPropertyGridFontcrxProperty.cpp" />
+    <ClCompile Include="MFCPropertyGridPencrxProperty.cpp" />
+    <ClCompile Include="MFCPropertyGridPenProperty.cpp" />
+    <ClCompile Include="MFCPropertyGridURLProperty.cpp" />
+    <ClCompile Include="MFCRibbonDateCtrl.cpp" />
+    <ClCompile Include="P2PmsgNodeDlg.cpp" />
+    <ClCompile Include="P2PmsgTreeCtrl.cpp" />
+    <ClCompile Include="P2PeventDlg.cpp" />
+    <ClCompile Include="P2PexploreCtrl.cpp" />
+    <ClCompile Include="P2PropertiesWnd.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="URLDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bmp00001.bmp" />
+    <None Include="res\TargetcoreMFC.rc2" />
+    <None Include="toolbar1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BrushDialog.h" />
+    <ClInclude Include="CefCtrl.h" />
+    <ClInclude Include="CFile_Ext.h" />
+    <ClInclude Include="CHeaderCtrl_Ext.h" />
+    <ClInclude Include="CMFCPropertyGridCtrl_Ext.h" />
+    <ClInclude Include="COleDropTarget_Ext.h" />
+    <ClInclude Include="CPoint_Ext.h" />
+    <ClInclude Include="CSVDialog.h" />
+    <ClInclude Include="CWnd_Ext.h" />
+    <ClInclude Include="CListViewEx.h" />
+    <ClInclude Include="EnumFilesinFolder.h" />
+    <ClInclude Include="InPlaceEdit.h" />
+    <ClInclude Include="MFCPropertyGridCSVProperty.h" />
+    <ClInclude Include="MFCPropertyGridEnumProperty.h" />
+    <ClInclude Include="MFCPropertyGridBrushProperty.h" />
+    <ClInclude Include="MFCPropertyGridBnumProperty.h" />
+    <ClInclude Include="MFCPropertyGridFontcrxProperty.h" />
+    <ClInclude Include="MFCPropertyGridPencrxProperty.h" />
+    <ClInclude Include="MFCPropertyGridPenProperty.h" />
+    <ClInclude Include="MFCPropertyGridURLProperty.h" />
+    <ClInclude Include="MFCRibbonDateCtrl.h" />
+    <ClInclude Include="TargetcoreMFC.h" />
+    <ClInclude Include="TargetcoreMFC_version.h" />
+    <ClInclude Include="P2PmsgNodeDlg.h" />
+    <ClInclude Include="P2PmsgTreeCtrl.h" />
+    <ClInclude Include="P2PeventDlg.h" />
+    <ClInclude Include="P2PexploreCtrl.h" />
+    <ClInclude Include="P2PropertiesWnd.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Targetver.h" />
+    <ClInclude Include="URLDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TargetcoreMFC.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\P2Properties_Wnd.bmp" />
+    <Image Include="res\P2Properties_wnd.ico" />
+    <Image Include="res\P2Properties_Wnd_hc.bmp" />
+    <Image Include="res\P2Properties_wnd_hc.ico" />
+  </ItemGroup>
+  <!-- All three siblings are consumed as an include path plus an import library,
+       never as a linked project output: LinkLibraryDependencies is false, so the
+       explicit .lib list in <AdditionalDependencies> stays the one that is linked.
+       The references exist to ORDER the build, so a stale sibling can no longer be
+       linked silently. They also repair the 32-bit build: Targetcore had never been
+       built for Win32, so Debug|x86 and Release|x86 failed with LNK1104 on
+       Targetcore.lib until these references started producing it.
+
+       ShouldUnsetParentConfigurationAndPlatform, set false above, is required for
+       these to work. A solution build defaults it true, which strips Configuration
+       and Platform from the global properties the referenced project sees, so it
+       evaluates MSCS\Directory.Build.props with both empty. That file appends the
+       platform and configuration to $(WDMSCS_LIB) only when BOTH are set, so the
+       sibling writes its import library to MSCS\lib\<name>.lib (the un-suffixed
+       root, the very failure Directory.Build.props exists to prevent) and a
+       -t:Rebuild first CLEANS the correct per-configuration copy. -->
+  <ItemGroup>
+    <ProjectReference Include="..\Msgcore\Msgcore(2026).vcxproj">
+      <Project>{c1e33b10-d6ce-44be-8f98-080196bc682b}</Project>
+      <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
+      <SetPlatform>Platform=$(Platform)</SetPlatform>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\Targetcore\Targetcore(2026).vcxproj">
+      <Project>{dd78ae5d-9a41-4004-84ff-0106b45f5d18}</Project>
+      <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
+      <SetPlatform>Platform=$(Platform)</SetPlatform>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\MsgcoreMFC\MsgcoreMFC(2026).vcxproj">
+      <Project>{02e36b5e-efaf-40d8-91fb-146509156cf0}</Project>
+      <SetConfiguration>Configuration=$(Configuration)</SetConfiguration>
+      <SetPlatform>Platform=$(Platform)</SetPlatform>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_StartDate="2000/1/1" RESOURCE_FILE="TargetcoreMFC.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

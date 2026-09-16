@@ -33,7 +33,7 @@ static char THIS_FILE[]=__FILE__;
 #define new DEBUG_NEW
 #endif
 
-BOOL TargetCoreMFC_EXT
+BOOL TargetcoreMFC_EXT
 COleDropTarget_Wildcard ( COleDataObject *pDataObject, LPCTSTR lpszWildcard )
 {
     CString strWildcard = lpszWildcard;

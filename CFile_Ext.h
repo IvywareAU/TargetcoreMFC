@@ -18,14 +18,14 @@
 //
 
 #pragma   once
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 
 //
 //  CFile type operations
 //  NOTES: Static functions are just simpler
 //       : Facilitates message broadcasting to registered clients
 //
-TargetCoreMFC_EXT char*
+TargetcoreMFC_EXT char*
 CFile_Load2Memory ( LPCTSTR lpszFilename, DWORD dwMaxSize = 200000 );
 
 //  NOTES: The file MUST ALREADY EXIST. The handle is opened TRUNCATE_EXISTING,
@@ -35,27 +35,27 @@ CFile_Load2Memory ( LPCTSTR lpszFilename, DWORD dwMaxSize = 200000 );
 //         so every caller that tested it read the result backwards. There were
 //         no callers when that was found, which is the only reason it did no
 //         damage.
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CFile_Memory2File ( LPCTSTR lpszFilename, char *pcDumpBuffer, DWORD dwMaxFileSize );
 
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CFile_Exists ( LPCTSTR lpszFilename );
 
-TargetCoreMFC_EXT BOOL
+TargetcoreMFC_EXT BOOL
 CFile_IsDirectory ( LPCTSTR lpszFilename );
 
-TargetCoreMFC_EXT ULONGLONG
+TargetcoreMFC_EXT ULONGLONG
 CFile_Length ( LPCTSTR lpszFilename );
 
-TargetCoreMFC_EXT CString
+TargetcoreMFC_EXT CString
 CFile_Drive ( LPCTSTR lpszPathname );
 
-TargetCoreMFC_EXT CString
+TargetcoreMFC_EXT CString
 CFile_Directory ( LPCTSTR lpszPathname );
 
-TargetCoreMFC_EXT CString
+TargetcoreMFC_EXT CString
 CFile_PreprocessPath ( LPCTSTR lpszPathname );
 
-TargetCoreMFC_EXT int
+TargetcoreMFC_EXT int
 CFile_SHFileOperation ( HWND hWndParent, LPCTSTR lpszSourceFolder, LPCTSTR lpszDestinFolder );
 

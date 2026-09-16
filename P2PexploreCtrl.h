@@ -20,11 +20,11 @@
 
 #include "Msgexception.h"
 #include "DlgToolBar.h"
-#include "TargetCoreMFC.h"
+#include "TargetcoreMFC.h"
 
 ///////////////////////////////////////////////////////////////////////
 //  CP2PexploreCtrl dialog
-class TargetCoreMFC_EXT CP2PexploreCtrl : public CDialog
+class TargetcoreMFC_EXT CP2PexploreCtrl : public CDialog
 {
 	  DECLARE_DYNAMIC(CP2PexploreCtrl)
     // Contructors and destructor

@@ -1,4 +1,4 @@
-TargetCoreMFC
+TargetcoreMFC
 Copyright 2002-2026 Ivyware Pty Ltd, Khrustal & Mann
              MELBOURNE, VICTORIA, AUSTRALIA, 3000
 
@@ -23,22 +23,22 @@ terms and carry their own notices, which must not be removed:
 
     Targetver.h                        Visual Studio project template.
     Resource.h                         Visual C++ generated include file.
-    TargetCoreMFC.rc                   Visual C++ generated resource script.
+    TargetcoreMFC.rc                   Visual C++ generated resource script.
                                        See the note below - part of this file
                                        is not Microsoft's.
-    res/TargetCoreMFC.rc2              Visual C++ generated resource script,
+    res/TargetcoreMFC.rc2              Visual C++ generated resource script,
                                        for resources the editor does not
                                        maintain.
     stdafx.h                           Visual Studio project template.
     stdafx.cpp                         Visual Studio project template.
-    TargetCoreMFC(2026).sln            Visual Studio solution file.
-    TargetCoreMFC(2026).vcxproj        Visual Studio project files.
-    TargetCoreMFC(2026).vcxproj.filters
+    TargetcoreMFC(2026).sln            Visual Studio solution file.
+    TargetcoreMFC(2026).vcxproj        Visual Studio project files.
+    TargetcoreMFC(2026).vcxproj.filters
 
-TargetCoreMFC.rc is a mixed file. Its wizard-generated skeleton is Microsoft's,
+TargetcoreMFC.rc is a mixed file. Its wizard-generated skeleton is Microsoft's,
 as above; the VERSIONINFO block, and the values it reads from
-TargetCoreMFC_version.h, are the work of Khrustal & Mann and ARE covered by the
-Apache License, Version 2.0. TargetCoreMFC_version.h itself carries the Apache
+TargetcoreMFC_version.h, are the work of Khrustal & Mann and ARE covered by the
+Apache License, Version 2.0. TargetcoreMFC_version.h itself carries the Apache
 header in full.
 
 dllmain.cpp began as the AppWizard DLL entry point, but the DLL_PROCESS_ATTACH
@@ -76,7 +76,7 @@ Files that earlier revisions tracked and no longer do
 
 None of these needs an exception, because none is distributed any more:
 
-  - TargetCoreMFC.aps and TargetCoreMFC(2026).vcxproj.user were tracked only
+  - TargetcoreMFC.aps and TargetcoreMFC(2026).vcxproj.user were tracked only
     because they predated the .gitignore rules that name them. The first is the
     resource editor's binary cache, regenerated from the .rc; the second is
     per-user IDE settings. Neither is source.
@@ -117,7 +117,7 @@ Sibling components required at build and run time
 -------------------------------------------------------------------------
 
     Msgcore                             - Ivyware Pty Ltd, Khrustal & Mann.
-    TargetCore                          - Ivyware Pty Ltd, Khrustal & Mann.
+    Targetcore                          - Ivyware Pty Ltd, Khrustal & Mann.
     MsgcoreMFC                          - Ivyware Pty Ltd, Khrustal & Mann.
                                           All under the Apache License,
                                           Version 2.0.
